@@ -1,0 +1,7 @@
+{"repo": {"name": {"en-US": "The Droid Repo"}, "timestamp": 1},
+ "packages": {
+   "com.thedroid": {"metadata": {}, "versions": {
+      "aaa": {"manifest": {"versionCode": 3, "versionName": "1.1.1"}},
+      "bbb": {"manifest": {"versionCode": 2, "versionName": "1.1"}}}},
+   "com.kookie.music": {"metadata": {}, "versions": {
+      "ccc": {"manifest": {"versionCode": 14, "versionName": "0.8.1"}}}}}}

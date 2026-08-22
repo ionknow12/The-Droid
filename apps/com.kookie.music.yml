@@ -1,0 +1,13 @@
+package: com.kookie.music
+name: kookie
+project: "/home/jino/The Music App/Kookie"
+gradle_task: ":app:assembleRelease"
+apk: app/build/outputs/apk/release/app-release.apk
+metadata: fastlane/metadata/android
+repo_metadata:
+  Name: Kookie
+  Summary: Music player with its own ink
+  Description: |-
+    jinoy's custom music app.
+  License: GPL-3.0-only
+  Categories: [Multimedia]

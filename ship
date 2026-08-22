@@ -1,0 +1,2 @@
+#!/home/jino/.local/share/fdroidserver-venv/bin/python
+import sys; from shiplib import main; sys.exit(main(sys.argv[1:]))

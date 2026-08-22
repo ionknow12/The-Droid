@@ -1,0 +1,14 @@
+package: com.thedroid
+name: thedroid
+project: /home/jino/TheDroid
+gradle_task: ":thedroid:assembleRelease"
+apk: thedroid/build/outputs/apk/release/thedroid-release.apk
+metadata: thedroid/fastlane/metadata/android
+repo_metadata:
+  Name: The Droid
+  Summary: Independent F-Droid-compatible app store
+  Description: |-
+    jinoy's own app store client, built on the F-Droid libraries.
+    This repo delivers updates for The Droid itself and for jinoy's other apps.
+  License: GPL-3.0-or-later
+  Categories: [System]
