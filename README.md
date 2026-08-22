@@ -41,6 +41,7 @@ project: "/home/jino/The Music App/Kookie"
 gradle_task: ":app:assembleRelease"
 apk: app/build/outputs/apk/release/app-release.apk   # relative to project
 metadata: fastlane/metadata/android                  # relative to project, optional
+env_file: app/keystore/KEYSTORE_SECRETS.txt           # optional; KEY=VALUE lines exported to gradle (signing secrets, git-ignored)
 repo_metadata:                    # goes into metadata/<package>.yml
   Name: Kookie
   Summary: Music player with its own ink

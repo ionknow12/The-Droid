@@ -11,3 +11,4 @@ repo_metadata:
     jinoy's custom music app.
   License: GPL-3.0-only
   Categories: [Multimedia]
+env_file: app/keystore/KEYSTORE_SECRETS.txt

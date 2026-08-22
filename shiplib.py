@@ -44,6 +44,7 @@ class Recipe:
     apk: Path  # relative to project
     metadata: Path | None  # relative to project
     repo_metadata: dict
+    env_file: Path | None = None  # relative to project; KEY=VALUE lines fed to gradle (signing secrets)
 
 
 _REQUIRED = ("package", "name", "project", "gradle_task", "apk")
@@ -65,6 +66,7 @@ def load_recipes(apps_dir: Path) -> list[Recipe]:
                 apk=Path(data["apk"]),
                 metadata=Path(data["metadata"]) if data.get("metadata") else None,
                 repo_metadata=dict(data.get("repo_metadata") or {}),
+                env_file=Path(data["env_file"]) if data.get("env_file") else None,
             )
         )
     return recipes
@@ -205,6 +207,26 @@ def build_env() -> dict:
     return env
 
 
+def load_env_file(path: Path) -> dict[str, str]:
+    """KEY=VALUE per line; '#' comments, blank lines and a leading 'export ' are ignored.
+    Values are never logged — they are signing secrets."""
+    if not path.is_file():
+        raise ShipError(f"env_file not found: {path}")
+    out: dict[str, str] = {}
+    for raw in path.read_text().splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        if line.startswith("export "):
+            line = line[len("export "):]
+        k, v = line.split("=", 1)
+        v = v.strip()
+        if len(v) >= 2 and v[0] == v[-1] and v[0] in "'\"":
+            v = v[1:-1]
+        out[k.strip()] = v
+    return out
+
+
 def run(cmd: list[str], cwd: Path, env: dict | None = None) -> str:
     print(f"  $ {' '.join(cmd)}   (in {cwd})", flush=True)
     proc = subprocess.run(
@@ -247,7 +269,12 @@ def ship_app(recipe: Recipe, *, dry_run: bool, no_push: bool) -> None:
     started = time.time()
     if not (recipe.project / "gradlew").is_file():
         raise ShipError(f"no gradlew in {recipe.project}")
-    run(["./gradlew", recipe.gradle_task], cwd=recipe.project, env=build_env())
+    env = build_env()
+    if recipe.env_file is not None:
+        secrets = load_env_file(recipe.project / recipe.env_file)
+        env.update(secrets)
+        print(f"  (loaded {len(secrets)} env var(s) from {recipe.env_file})")
+    run(["./gradlew", recipe.gradle_task], cwd=recipe.project, env=env)
     apk_path = recipe.project / recipe.apk
     if not apk_path.is_file() or apk_path.stat().st_mtime < started:
         raise ShipError(f"build finished but {apk_path} is missing or stale")
