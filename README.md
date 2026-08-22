@@ -65,3 +65,6 @@ the repo key in `~/TheDroid-keys` via `config.yml` (not committed).
   `Kookie-*-debug.apk`) cannot update in place to the release-signed repo
   build. Uninstall once, install from The Droid, and updates flow from then on.
 - GitHub Pages takes a minute or so to serve a new index after `git push`.
+- The GitHub repo **must stay public** — free-plan Pages does not serve private repos
+  (it was private until 2026-08-22 and every phone got 404s). Nothing secret lives
+  here: only signed APKs, the signed index and metadata. Keys and `config.yml` are git-ignored.
