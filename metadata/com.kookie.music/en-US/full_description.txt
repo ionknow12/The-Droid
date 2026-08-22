@@ -1,0 +1,5 @@
+Kookie is jinoy's own YouTube Music client. Built to own the player: every line auditable, every network request accounted for.
+
+The whole network surface is one allowlist you can read in a minute — YouTube/Google endpoints only, plus GitHub for update checks and an off-by-default lyrics provider. No telemetry, no crash reporting, no third-party servers.
+
+Ink Studio lets you pick your own ink: modes, palettes, a hue wheel and Material seeds under one roof.
