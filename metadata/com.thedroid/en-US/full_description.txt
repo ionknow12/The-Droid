@@ -1,0 +1,3 @@
+The Droid is jinoy's own app store, built on the F-Droid libraries with a red, futuristic identity of its own.
+
+It browses any F-Droid-compatible repo — signed indexes, verified downloads, session installs, background update checks — and comes with The Droid Repo built in: jinoy's personal repo that delivers The Droid itself and jinoy's other custom apps as ordinary store updates.

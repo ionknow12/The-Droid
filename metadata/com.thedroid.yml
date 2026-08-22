@@ -1,6 +1,8 @@
 Name: The Droid
 Summary: Independent F-Droid-compatible app store
-Description: |-
-    jinoy's own app store client, built on the F-Droid libraries.
-    This repo delivers updates for The Droid itself.
+Description: 'jinoy''s own app store client, built on the F-Droid libraries.
+
+  This repo delivers updates for The Droid itself and for jinoy''s other apps.'
 License: GPL-3.0-or-later
+Categories:
+- System

@@ -1,0 +1,1 @@
+Your repo is home: The Droid Repo comes built in, pinned first, with a Yours shelf on Home. Existing installs pick the repo up automatically.
