@@ -1,0 +1,7 @@
+First release.
+
+- Shelves built from your folders
+- Resume exactly where you left off, even after a force-stop
+- Two books open at once, side by side or stacked
+- Bookmarks that survive renaming and moving files
+- Crop margins, night mode, contents jump

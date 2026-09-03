@@ -1,0 +1,9 @@
+Name: Inspector
+Summary: A PDF reader that remembers your page
+Description: 'jinoy''s personal PDF manager. Identifies books by content, not filename,
+  so
+
+  positions and bookmarks survive renaming, moving and reinstalling.'
+License: AGPL-3.0-only
+Categories:
+- Reading

@@ -1,0 +1,15 @@
+package: com.inspector.reader
+name: inspector
+project: "/home/jino/PDF reader app/Inspector"
+gradle_task: ":app:assembleRelease"
+apk: app/build/outputs/apk/release/app-release.apk
+metadata: fastlane/metadata/android
+repo_metadata:
+  Name: Inspector
+  Summary: A PDF reader that remembers your page
+  Description: |-
+    jinoy's personal PDF manager. Identifies books by content, not filename, so
+    positions and bookmarks survive renaming, moving and reinstalling.
+  License: AGPL-3.0-only
+  Categories: [Reading]
+env_file: app/keystore/KEYSTORE_SECRETS.txt

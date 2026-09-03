@@ -1,0 +1,12 @@
+A personal PDF manager for studying.
+
+Inspector identifies a book by its contents rather than its filename, so renaming a
+file, moving it to another folder, or reinstalling the app never separates a book from
+your place in it. Your position is written whenever scrolling settles, so even a hard
+kill cannot lose the page.
+
+Shelves are built from the folders you already keep your PDFs in. Two books can be open
+side by side. Margins can be cropped for scanned textbooks, night mode inverts lightness
+while leaving diagrams readable, and the table of contents is one tap away.
+
+Nothing leaves your device.
